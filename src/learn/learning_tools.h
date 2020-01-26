@@ -1,4 +1,4 @@
-﻿#ifndef __LEARN_WEIGHT_H__
+#ifndef __LEARN_WEIGHT_H__
 #define __LEARN_WEIGHT_H__
 
 // 評価関数の機械学習のときに用いる重み配列などに関する機械学習用ツール類一式

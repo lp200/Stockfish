@@ -1,4 +1,4 @@
-﻿#ifndef __HALF_FLOAT_H__
+#ifndef __HALF_FLOAT_H__
 #define __HALF_FLOAT_H__
 
 // Half Float Library by yaneurao

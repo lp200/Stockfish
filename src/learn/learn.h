@@ -1,4 +1,4 @@
-﻿#ifndef _LEARN_H_
+#ifndef _LEARN_H_
 #define _LEARN_H_
 
 #if defined(EVAL_LEARN)

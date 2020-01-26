@@ -1,4 +1,4 @@
-﻿// 学習関係のルーチン
+// 学習関係のルーチン
 //
 // 1) 棋譜の自動生成
 //   → "gensfen"コマンド
@@ -577,7 +577,7 @@ void MultiThinkGenSfen::thread_worker(size_t thread_id)
         if (pos.is_draw(0)) {
 #if defined	(LEARN_GENSFEN_USE_DRAW_RESULT)
           // 引き分けを書き出すとき
-          flush_psv(is_win);
+          flush_psv(0);
 #endif
           break;
         }
