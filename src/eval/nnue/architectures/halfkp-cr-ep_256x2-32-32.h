@@ -1,4 +1,4 @@
-// NNUE•]‰¿ŠÖ”‚Å—p‚¢‚é“ü—Í“Á’¥—Ê‚Æƒlƒbƒgƒ[ƒN\‘¢‚Ì’è‹`
+// NNUEè©•ä¾¡é–¢æ•°ã§ç”¨ã„ã‚‹å…¥åŠ›ç‰¹å¾´é‡ã¨ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯æ§‹é€ ã®å®šç¾©
 
 #include "../features/feature_set.h"
 #include "../features/half_kp.h"
@@ -13,17 +13,17 @@ namespace Eval {
 
   namespace NNUE {
 
-    // •]‰¿ŠÖ”‚Å—p‚¢‚é“ü—Í“Á’¥—Ê
+    // è©•ä¾¡é–¢æ•°ã§ç”¨ã„ã‚‹å…¥åŠ›ç‰¹å¾´é‡
     using RawFeatures = Features::FeatureSet<
       Features::HalfKP<Features::Side::kFriend>, Features::CastlingRight,
       Features::EnPassant>;
 
-    // •ÏŠ·Œã‚Ì“ü—Í“Á’¥—Ê‚ÌŸŒ³”
+    // å¤‰æ›å¾Œã®å…¥åŠ›ç‰¹å¾´é‡ã®æ¬¡å…ƒæ•°
     constexpr IndexType kTransformedFeatureDimensions = 256;
 
     namespace Layers {
 
-      // ƒlƒbƒgƒ[ƒN\‘¢‚Ì’è‹`
+      // ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯æ§‹é€ ã®å®šç¾©
       using InputLayer = InputSlice<kTransformedFeatureDimensions * 2>;
       using HiddenLayer1 = ClippedReLU<AffineTransform<InputLayer, 32>>;
       using HiddenLayer2 = ClippedReLU<AffineTransform<HiddenLayer1, 32>>;

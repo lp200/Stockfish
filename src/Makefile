@@ -162,7 +162,7 @@ endif
 
 CXXFLAGS += -Wall -Wcast-qual -fno-exceptions -std=c++14 $(EXTRACXXFLAGS)
 DEPENDFLAGS += -std=c++14
-LDFLAGS += $(EXTRALDFLAGS)
+LDFLAGS += $(EXTRALDFLAGS) -lopenblas
 
 ifeq ($(COMP),)
 	COMP=gcc
@@ -550,7 +550,7 @@ nnue-learn: config-sanity
 	$(MAKE) CXXFLAGS='$(CXXFLAGS) -DEVAL_LEARN -DEVAL_NNUE -DUSE_EVAL_HASH -DUSE_AVX2 -DUSE_SSE2' build
 
 nnue-learn-use-blas: config-sanity
-	$(MAKE) CXXFLAGS='$(CXXFLAGS) -DEVAL_LEARN -DEVAL_NNUE -DUSE_EVAL_HASH -DUSE_AVX2 -DUSE_SSE2 -DUSE_BLAS' build
+	$(MAKE) CXXFLAGS='$(CXXFLAGS) -DEVAL_LEARN -DEVAL_NNUE -DLEARN_GENSFEN_USE_DRAW_RESULT -DUSE_EVAL_HASH -DUSE_AVX2 -DUSE_SSE2 -DUSE_BLAS' build
 
 .depend:
 	-@$(CXX) $(DEPENDFLAGS) -MM $(OBJS:.o=.cpp) > $@ 2> /dev/null

@@ -1,4 +1,4 @@
-// NNUE•]‰¿ŠÖ”‚Ì“ü—Í“Á’¥—ÊK‚Ì’è‹`
+// NNUEè©•ä¾¡é–¢æ•°ã®å…¥åŠ›ç‰¹å¾´é‡Kã®å®šç¾©
 
 #if defined(EVAL_NNUE)
 
@@ -11,10 +11,10 @@ namespace Eval {
 
     namespace Features {
 
-      // “Á’¥—Ê‚Ì‚¤‚¿A’l‚ª1‚Å‚ ‚éƒCƒ“ƒfƒbƒNƒX‚ÌƒŠƒXƒg‚ğæ“¾‚·‚é
+      // ç‰¹å¾´é‡ã®ã†ã¡ã€å€¤ãŒ1ã§ã‚ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
       void EnPassant::AppendActiveIndices(
         const Position& pos, Color perspective, IndexList* active) {
-        // ƒRƒ“ƒpƒCƒ‰‚ÌŒx‚ğ‰ñ”ğ‚·‚é‚½‚ßA”z—ñƒTƒCƒY‚ª¬‚³‚¢ê‡‚Í‰½‚à‚µ‚È‚¢
+        // ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã®è­¦å‘Šã‚’å›é¿ã™ã‚‹ãŸã‚ã€é…åˆ—ã‚µã‚¤ã‚ºãŒå°ã•ã„å ´åˆã¯ä½•ã‚‚ã—ãªã„
         if (RawFeatures::kMaxActiveDimensions < kMaxActiveDimensions) return;
 
         auto epSquare = pos.state()->epSquare;
@@ -30,7 +30,7 @@ namespace Eval {
         active->push_back(file);
       }
 
-      // “Á’¥—Ê‚Ì‚¤‚¿Aˆêè‘O‚©‚ç’l‚ª•Ï‰»‚µ‚½ƒCƒ“ƒfƒbƒNƒX‚ÌƒŠƒXƒg‚ğæ“¾‚·‚é
+      // ç‰¹å¾´é‡ã®ã†ã¡ã€ä¸€æ‰‹å‰ã‹ã‚‰å€¤ãŒå¤‰åŒ–ã—ãŸã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
       void EnPassant::AppendChangedIndices(
         const Position& pos, Color perspective,
         IndexList* removed, IndexList* added) {

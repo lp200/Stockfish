@@ -1,4 +1,4 @@
-﻿// NNUE評価関数で用いる入力特徴量とネットワーク構造
+// NNUE評価関数で用いる入力特徴量とネットワーク構造
 
 #ifndef _NNUE_ARCHITECTURE_H_
 #define _NNUE_ARCHITECTURE_H_
@@ -6,10 +6,10 @@
 #if defined(EVAL_NNUE)
 
 // 入力特徴量とネットワーク構造が定義されたヘッダをincludeする
-//#include "architectures/k-p_256x2-32-32.h"
+#include "architectures/k-p_256x2-32-32.h"
 //#include "architectures/k-p-cr_256x2-32-32.h"
 //#include "architectures/k-p-cr-ep_256x2-32-32.h"
-#include "architectures/halfkp_256x2-32-32.h"
+//#include "architectures/halfkp_256x2-32-32.h"
 //#include "architectures/halfkp-cr-ep_256x2-32-32.h"
 
 namespace Eval {

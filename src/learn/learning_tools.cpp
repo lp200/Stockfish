@@ -1,4 +1,4 @@
-﻿#include "learning_tools.h"
+#include "learning_tools.h"
 
 #if defined (EVAL_LEARN)
 

@@ -1,4 +1,4 @@
-// NNUE•]‰¿ŠÖ”‚Ì“ü—Í“Á’¥—ÊK‚Ì’è‹`
+// NNUEè©•ä¾¡é–¢æ•°ã®å…¥åŠ›ç‰¹å¾´é‡Kã®å®šç¾©
 
 #ifndef _NNUE_FEATURES_ENPASSANT_H_
 #define _NNUE_FEATURES_ENPASSANT_H_
@@ -14,25 +14,25 @@ namespace Eval {
 
     namespace Features {
 
-      // “Á’¥—ÊKF‹Ê‚ÌˆÊ’u
+      // ç‰¹å¾´é‡Kï¼šç‰ã®ä½ç½®
       class EnPassant {
       public:
-        // “Á’¥—Ê–¼
+        // ç‰¹å¾´é‡å
         static constexpr const char* kName = "EnPassant";
-        // •]‰¿ŠÖ”ƒtƒ@ƒCƒ‹‚É–„‚ß‚ŞƒnƒbƒVƒ…’l
+        // è©•ä¾¡é–¢æ•°ãƒ•ã‚¡ã‚¤ãƒ«ã«åŸ‹ã‚è¾¼ã‚€ãƒãƒƒã‚·ãƒ¥å€¤
         static constexpr std::uint32_t kHashValue = 0x02924F91u;
-        // “Á’¥—Ê‚ÌŸŒ³”
+        // ç‰¹å¾´é‡ã®æ¬¡å…ƒæ•°
         static constexpr IndexType kDimensions = 8;
-        // “Á’¥—Ê‚Ì‚¤‚¿A“¯‚É’l‚ª1‚Æ‚È‚éƒCƒ“ƒfƒbƒNƒX‚Ì”‚ÌÅ‘å’l
+        // ç‰¹å¾´é‡ã®ã†ã¡ã€åŒæ™‚ã«å€¤ãŒ1ã¨ãªã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®æ•°ã®æœ€å¤§å€¤
         static constexpr IndexType kMaxActiveDimensions = 1;
-        // ·•ªŒvZ‚Ì‘ã‚í‚è‚É‘SŒvZ‚ğs‚¤ƒ^ƒCƒ~ƒ“ƒO
+        // å·®åˆ†è¨ˆç®—ã®ä»£ã‚ã‚Šã«å…¨è¨ˆç®—ã‚’è¡Œã†ã‚¿ã‚¤ãƒŸãƒ³ã‚°
         static constexpr TriggerEvent kRefreshTrigger = TriggerEvent::kAnyPieceMoved;
 
-        // “Á’¥—Ê‚Ì‚¤‚¿A’l‚ª1‚Å‚ ‚éƒCƒ“ƒfƒbƒNƒX‚ÌƒŠƒXƒg‚ğæ“¾‚·‚é
+        // ç‰¹å¾´é‡ã®ã†ã¡ã€å€¤ãŒ1ã§ã‚ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
         static void AppendActiveIndices(const Position& pos, Color perspective,
           IndexList* active);
 
-        // “Á’¥—Ê‚Ì‚¤‚¿Aˆêè‘O‚©‚ç’l‚ª•Ï‰»‚µ‚½ƒCƒ“ƒfƒbƒNƒX‚ÌƒŠƒXƒg‚ğæ“¾‚·‚é
+        // ç‰¹å¾´é‡ã®ã†ã¡ã€ä¸€æ‰‹å‰ã‹ã‚‰å€¤ãŒå¤‰åŒ–ã—ãŸã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒªã‚¹ãƒˆã‚’å–å¾—ã™ã‚‹
         static void AppendChangedIndices(const Position& pos, Color perspective,
           IndexList* removed, IndexList* added);
       };

@@ -1,4 +1,4 @@
-﻿#if defined (EVAL_LEARN)
+#if defined (EVAL_LEARN)
 
 #include "../misc.h"
 #include "../position.h"

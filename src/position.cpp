@@ -244,11 +244,11 @@ Position& Position::set(const string& fenStr, bool isChess960, StateInfo* si, Th
   st = si;
 
 #if defined(EVAL_NNUE)
-  // evalList‚ÌclearBã‚Åmemset‚Åƒ[ƒƒNƒŠƒA‚µ‚½‚Æ‚«‚ÉƒNƒŠƒA‚³‚ê‚Ä‚¢‚é‚ªcB
+  // evalListã®clearã€‚ä¸Šã§memsetã§ã‚¼ãƒ­ã‚¯ãƒªã‚¢ã—ãŸã¨ãã«ã‚¯ãƒªã‚¢ã•ã‚Œã¦ã„ã‚‹ãŒâ€¦ã€‚
   evalList.clear();
 
-  // PieceList‚ğXV‚·‚éã‚ÅA‚Ç‚Ì‹î‚ª‚Ç‚±‚É‚ ‚é‚©‚ğİ’è‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢‚ªA
-  // ‚»‚ê‚¼‚ê‚Ì‹î‚ğ‚Ç‚±‚Ü‚Åg‚Á‚½‚©‚ÌƒJƒEƒ“ƒ^[
+  // PieceListã‚’æ›´æ–°ã™ã‚‹ä¸Šã§ã€ã©ã®é§’ãŒã©ã“ã«ã‚ã‚‹ã‹ã‚’è¨­å®šã—ãªã‘ã‚Œã°ãªã‚‰ãªã„ãŒã€
+  // ãã‚Œãã‚Œã®é§’ã‚’ã©ã“ã¾ã§ä½¿ã£ãŸã‹ã®ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼
   PieceNumber next_piece_number = PIECE_NUMBER_ZERO;
 #endif  // defined(EVAL_NNUE)
 
@@ -270,10 +270,10 @@ Position& Position::set(const string& fenStr, bool isChess960, StateInfo* si, Th
 
 #if defined(EVAL_NNUE)
           PieceNumber piece_no =
-            (idx == W_KING) ? PIECE_NUMBER_WKING : // æè‹Ê
-            (idx == B_KING) ? PIECE_NUMBER_BKING : // Œãè‹Ê
-            next_piece_number++; // ‚»‚êˆÈŠO
-          evalList.put_piece(piece_no, sq, pc); // sq‚Ì¡‚Épc‚Ì‹î‚ğ”z’u‚·‚é
+            (idx == W_KING) ? PIECE_NUMBER_WKING : // å…ˆæ‰‹ç‰
+            (idx == B_KING) ? PIECE_NUMBER_BKING : // å¾Œæ‰‹ç‰
+            next_piece_number++; // ãã‚Œä»¥å¤–
+          evalList.put_piece(piece_no, sq, pc); // sqã®å‡ã«pcã®é§’ã‚’é…ç½®ã™ã‚‹
 #endif  // defined(EVAL_NNUE)
 
           ++sq;
@@ -854,7 +854,7 @@ void Position::do_move(Move m, StateInfo& newSt, bool givesCheck) {
       st->rule50 = 0;
 
 #if defined(EVAL_NNUE)
-      dp.dirty_num = 2; // “®‚¢‚½‹î‚Í2ŒÂ
+      dp.dirty_num = 2; // å‹•ã„ãŸé§’ã¯2å€‹
 
       dp.pieceNo[1] = piece_no1;
       dp.changed_piece[1].old_piece = evalList.bona_piece(piece_no1);
@@ -1085,8 +1085,8 @@ template<bool Do>
 void Position::do_castling(Color us, Square from, Square& to, Square& rfrom, Square& rto) {
 #if defined(EVAL_NNUE)
   auto& dp = st->dirtyPiece;
-  // ·•ªŒvZ‚Ì‚½‚ß‚ÉˆÚ“®‚µ‚½‹î‚ğStateInfo‚É‹L˜^‚µ‚Ä‚¨‚­B
-  dp.dirty_num = 2; // “®‚¢‚½‹î‚Í2ŒÂ
+  // å·®åˆ†è¨ˆç®—ã®ãŸã‚ã«ç§»å‹•ã—ãŸé§’ã‚’StateInfoã«è¨˜éŒ²ã—ã¦ãŠãã€‚
+  dp.dirty_num = 2; // å‹•ã„ãŸé§’ã¯2å€‹
 
   PieceNumber piece_no0;
   PieceNumber piece_no1;

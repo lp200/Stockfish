@@ -1,4 +1,4 @@
-﻿#ifndef _MULTI_THINK_
+#ifndef _MULTI_THINK_
 #define _MULTI_THINK_
 
 #if defined(EVAL_LEARN)
